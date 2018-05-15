@@ -1,10 +1,10 @@
 import Axios from 'axios';
 
 let urlStart = "https://api.flickr.com/services/feeds/photos_public.gne?tags=";
-let urlEnd = "&format=json&nojsoncallback=true";
+let urlEnd = "&api_key=abe1d0e837e9682a072fba77f5f87fb4&extras=url_o,url_t&sort=&format=json&nojsoncallback=true";
+// &extras=url_c was supposed to return a larger image size as well.
 
 export const LOAD_IMAGES = 'LOAD_IMAGES';
-export const LOAD_IMAGE = 'LOAD_IMAGE';
 export const ERROR = 'ERROR';
 
 // creating a GET action that calls all Images
@@ -26,16 +26,3 @@ export const loadImages = (tags) => {
     });
   };
 };
-
-// load single image
-// export const loadImage = (id) => {
-//   return function(dispatch){
-//     return Axios.get(`${url + id}`)
-//     .then(image => {
-//       dispatch({
-//         type: LOAD_IMAGE,
-//         image: image.data
-//       });
-//     });
-//   };
-// };
