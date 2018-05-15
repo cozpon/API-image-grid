@@ -14,12 +14,6 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
   }
-  // componentDidMount(){
-  //   let tag = 'armadillo';
-  //   this.props.loadImages(tag);
-  //   // sending to the Actions to load images from the tag
-  // }
-
 
   handleSubmit(evt) {
     evt.preventDefault();
@@ -35,6 +29,10 @@ class App extends Component {
     {
       search : evt.target.value
     });
+  }
+
+  handleImageClick () {
+    console.log("YO");
   }
 
   render() {
@@ -59,7 +57,9 @@ class App extends Component {
           </div>
         </form>
         <div className="images">
-          <ImageList images={this.props.images} />
+          <a onClick={this.handleImageClick}>
+            <ImageList images={this.props.images} />
+          </a>
         </div>
      </div>
     );
