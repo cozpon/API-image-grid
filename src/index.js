@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
-import './index.css';
+import '../index.css';
 
 
 import App from './containers/App';

@@ -54,26 +54,27 @@ class App extends Component {
 
   render() {
     return (
-      <div id="main">
+      <div>
         <form onSubmit={this.handleSubmit}>
-          <div id="search">
+          <div>
               <input
+              class="Input"
                 name="search"
                 type="text"
                 placeholder="What do you want?"
                 defaultValue={this.state.search}
                 onChange={this.handleSearchInput}/>
           </div>
-          <div id="submit_button">
+          <div>
             <button
-              className="search-btn"
+              class="Button Button--default"
               type="submit"
               onClick={this.handleSubmit}>
               Search
             </button>
           </div>
         </form>
-        <div className="images">
+        <div className="Grid Grid--withGutter Grid--fit">
           <a onClick={this.openModal}>
             <ImageList images={this.props.images} />
           </a>
