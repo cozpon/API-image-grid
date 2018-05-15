@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadImages } from '../../actions/image.actions';
 import ImageList from '../../components/imageList.components';
-
+import Modal from '../Modal';
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
       images: [],
-      search : ''
+      search : '',
+      isOpen: false,
+      url: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleSubmit(evt) {
@@ -31,8 +35,21 @@ class App extends Component {
     });
   }
 
-  handleImageClick () {
-    console.log("YO");
+  openModal (evt) {
+    let url = evt.target.src;
+    if(url){
+      this.setState({
+        isOpen: true,
+        url: url
+      });
+    }
+  }
+
+  closeModal (evt) {
+    this.setState({
+      isOpen: false,
+      url: ''
+    });
   }
 
   render() {
@@ -57,9 +74,14 @@ class App extends Component {
           </div>
         </form>
         <div className="images">
-          <a onClick={this.handleImageClick}>
+          <a onClick={this.openModal}>
             <ImageList images={this.props.images} />
           </a>
+          <Modal
+            show={this.state.isOpen}
+            onClose={this.closeModal}>
+            <img src={this.state.url} />
+          </Modal>
         </div>
      </div>
     );
@@ -68,8 +90,9 @@ class App extends Component {
 
 
 const mapStateToProps = (state) => {
+  console.log(state, "STATE")
   return {
-    images : state.imageList, // makes it this.props.messages
+    images : state.imageList, // makes it this.props.images
   }
 }
 
