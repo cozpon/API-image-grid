@@ -3,7 +3,7 @@ import Image from'./image.components';
 
 const ImageList = ({ images }) => {
   return (
-    <div className="image-list">
+    <div className='image-list'>
       {
         images.map((image, index) => {
           let imageLink = image.media.m.replace('_m', '_c');
