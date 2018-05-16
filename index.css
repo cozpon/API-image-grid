@@ -7,7 +7,6 @@
 @import "suitcss-utils-offset";
 @import "suitcss-utils-position";
 @import "suitcss-utils-size";
-@import "suitcss-utils-text";
 
 @import "suitcss-components-arrange";
 @import "suitcss-components-button";
@@ -42,6 +41,9 @@ html {
   color: var(--base-color);
 }
 
+.Grid-cell img:hover {
+  background-color: yellow;
+}
 
 .Grid-cell img {
   display:block;
@@ -63,4 +65,26 @@ html {
 .Button {
   margin-left: 45%;
   width: 200px;
+}
+
+.Button--default {
+  background-color: #eee;
+  color: #444;
+  border-color: #d9d9d9 #d9d9d9 #ccc;
+  border-radius: 2px;
+}
+
+.Button--default:hover,
+.Button--default:focus,
+.Button--default:active,
+.Button--default.is-pressed {
+  background-color: #f5f5f5;
+  color: #666;
+  border-color: #c6c6c6 #c6c6c6 #bbb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.Button--large {
+  font-size: 1.0em;
+  padding: 0.75em 1.5em;
 }

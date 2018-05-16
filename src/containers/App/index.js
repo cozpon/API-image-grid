@@ -67,7 +67,7 @@ class App extends Component {
           </div>
           <div>
             <button
-              className="Button Button--default"
+              className="Button Button--large"
               type="submit"
               onClick={this.handleSubmit}>
               Search
