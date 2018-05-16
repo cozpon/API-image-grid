@@ -3,7 +3,7 @@ import Image from'./image.components';
 
 const ImageList = ({ images }) => {
   return (
-    <div className="Grid Grid--alignCenter" >
+    <div className="Grid Grid--alignMiddle" >
       {
         images.map((image, index) => {
           let imageLink = image.media.m.replace('_m', '_c');

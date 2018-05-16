@@ -33,58 +33,67 @@
   --Button-disabled-opacity: 0.6;
 
   --Grid-font-size: 4rem;
-  --Grid-gutter-size: 10px;
+  --Grid-gutter-size: 0px;
 }
 
 html {
   font-size: calc(var(--base-font) * 2);
   color: var(--base-color);
 }
+.Grid {
+  padding: 50px;
+  padding-left: 125px;
+}
 
 .Grid-cell img:hover {
-  background-color: yellow;
+  box-shadow: 10px 5px 5px red;
+  -moz-box-shadow: 10px 5px 5px red;
+  -webkit-box-shadow:  10px 5px 5px red;
 }
 
 .Grid-cell img {
+  position: absolute;
+  max-width: 90%;
   display:block;
-  float:left;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.Grid-cell {
   position: relative;
-  max-width: 80%;
-  padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
-  margin: 2.66%;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-size:cover;
+  overflow: hidden;
+  padding-bottom: 50%;
+  max-width: 75%;
 }
 
 .Input {
-  margin-left: 40%;
-  width: 400px;
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 500px;
+  padding: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+  margin-top: 2%;
+  margin-left: 38%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background: #EEF;
+
 }
 
 .Button {
-  margin-left: 45%;
-  width: 200px;
-}
-
-.Button--default {
-  background-color: #eee;
-  color: #444;
-  border-color: #d9d9d9 #d9d9d9 #ccc;
-  border-radius: 2px;
-}
-
-.Button--default:hover,
-.Button--default:focus,
-.Button--default:active,
-.Button--default.is-pressed {
-  background-color: #f5f5f5;
-  color: #666;
-  border-color: #c6c6c6 #c6c6c6 #bbb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-left: 44%;
+  width: 220px;
 }
 
 .Button--large {
-  font-size: 1.0em;
-  padding: 0.75em 1.5em;
+  padding: 10px;
+  background: #EEF;
+  border-bottom: 2px solid #30C29E;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #666;
+  box-shadow: 1px 2px 5px 1.5px rgba(0, 0, 0, 0.22);
 }
+
