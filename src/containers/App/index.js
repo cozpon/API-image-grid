@@ -24,7 +24,6 @@ class App extends Component {
     let tags = {
       search : this.state.search
     };
-
     this.props.loadImages(tags);
   }
 
@@ -37,7 +36,7 @@ class App extends Component {
 
   openModal (evt) {
     let url = evt.target.src;
-    if(url){
+    if(url){ // clicking the actual image opens the Modal, and not just Div padding
       this.setState({
         isOpen: true,
         url: url
@@ -57,24 +56,22 @@ class App extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <div>
-              <input
-                className="Input"
-                name="search"
-                type="text"
-                placeholder="What do you want?"
-                defaultValue={this.state.search}
-                onChange={this.handleSearchInput}
-              />
-            </div>
-            <div>
-              <button
-                className="Button Button--large"
-                type="submit"
-                onClick={this.handleSubmit}>
-                Search
-              </button>
-            </div>
+            <input
+              className="Input"
+              name="search"
+              type="text"
+              placeholder="What do you want?"
+              defaultValue={this.state.search}
+              onChange={this.handleSearchInput}
+            />
+          </div>
+          <div>
+            <button
+              className="Button Button--large"
+              type="submit"
+              onClick={this.handleSubmit}>
+              Search
+            </button>
           </div>
         </form>
         <div>
@@ -85,7 +82,10 @@ class App extends Component {
             show={this.state.isOpen}
             onClose={this.closeModal}
             className="Modal-Backdrop" >
-            <img className="Modal-Image" src={this.state.url} />
+              <img
+                className="Modal-Image"
+                src={this.state.url}
+              />
           </Modal>
         </div>
      </div>

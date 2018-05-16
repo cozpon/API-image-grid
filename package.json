@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors",
     "build": "npm run setup && npm run preprocess",
-  "preprocess": "suitcss index.css build/build.css",
-  "setup": "npm install && mkdir -p build"
+    "preprocess": "suitcss index.css build/build.css",
+    "setup": "npm install && mkdir -p build"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
