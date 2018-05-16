@@ -15,15 +15,6 @@
   --Grid-gutter-size: 0px;
 }
 
-/*html {
-  font-size: calc(var(--base-font) * 2);
-  color: var(--base-color);
-}*/
-
-@custom-media --sm-viewport (min-width:320px) and (max-width:640px);
-@custom-media --md-viewport (min-width:640px) and (max-width:960px);
-@custom-media --lg-viewport (min-width:960px);
-
 .Grid {
   padding: 50px;
 }
@@ -49,9 +40,11 @@
   max-width: 65%;
 }
 
+/* Modal Image */
+
 .Modal {
   display: block;
-  max-width: 50%;
+  max-width: 30%;
   min-height: 20%;
   margin: 0px auto;
   padding: 2%;
@@ -74,27 +67,7 @@
   padding: 25px;
 }
 
-/* Medium Viewport */
-
-@media screen and (min-width: 640px) and (max-width: 960px) {
-  .Modal-Image {
-    max-width: 100%;
-  }
-  .Modal {
-    max-width: 65%;
-  }
-}
-
-/* Small Viewport */
-
-@media screen and (min-width: 320px) and (max-width: 640px) {
-  .Modal-Image {
-    max-width: 100%;
-  }
-  .Modal {
-    max-width: 85%;
-  }
-}
+/* Search Input */
 
 .Input {
   font-size: 14px;
@@ -112,22 +85,6 @@
   background: #EEF;
 }
 
-/* Medium Viewport */
-
-@media screen and (min-width: 640px) and (max-width: 960px) {
-  .Input {
-    width: 350px;
-    padding: 5px;
-  }
-}
-
-/* Small Viewport */
-
-@media screen and (min-width: 320px) and (max-width: 640px) {
-  .Input {
-    width: 200px;
-  }
-}
 
 /* Search Button Styles */
 
@@ -168,7 +125,7 @@
   box-shadow: inset 0 1px 2px rgba(0,0,0, 0.2);
 }
 
-
+/* Modal Close Button (X) */
 
 .Close-Button {
   margin: auto;
@@ -178,4 +135,68 @@
   margin-top: 2%;
   margin-left: 0%;
   cursor: pointer;
+}
+
+
+/* ///   Responsiveness  \\\ */
+
+
+/* Medium Viewport */
+
+@media screen and (min-width: 640px) and (max-width: 960px) {
+  .Grid {
+    padding: 25px;
+  }
+  .Grid-cell {
+    max-width: 70%;
+  }
+  .Grid-cell img {
+    padding-top: 20px;
+  }
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 65%;
+  }
+  .Input {
+    width: 350px;
+    padding: 5px;
+  }
+  .Button {
+    width: 200px;
+  }
+  .Button--large {
+    padding: 5px;
+  }
+}
+
+/* Small Viewport */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .Grid {
+    padding: 0px;
+  }
+  .Grid-cell {
+    max-width: 80%;
+  }
+  .Grid-cell img {
+    padding-top: 12px;
+  }
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 85%;
+  }
+  .Input {
+    width: 200px;
+    padding: 2px;
+  }
+  .Button {
+    width: 100px;
+  }
+  .Button--large {
+    padding: 3px;
+  }
 }
