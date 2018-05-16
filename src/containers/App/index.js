@@ -57,21 +57,24 @@ class App extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
+            <div>
               <input
                 className="Input"
                 name="search"
                 type="text"
                 placeholder="What do you want?"
                 defaultValue={this.state.search}
-                onChange={this.handleSearchInput}/>
-          </div>
-          <div>
-            <button
-              className="Button Button--large"
-              type="submit"
-              onClick={this.handleSubmit}>
-              Search
-            </button>
+                onChange={this.handleSearchInput}
+              />
+            </div>
+            <div>
+              <button
+                className="Button Button--large"
+                type="submit"
+                onClick={this.handleSubmit}>
+                Search
+              </button>
+            </div>
           </div>
         </form>
         <div>
@@ -89,11 +92,9 @@ class App extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
-  console.log(state, "STATE")
   return {
-    images : state.imageList, // makes it this.props.images
+    images : state.imageList
   }
 }
 
@@ -104,7 +105,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
 
 export default connect(
   mapStateToProps,
