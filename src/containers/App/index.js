@@ -58,7 +58,7 @@ class App extends Component {
         <form onSubmit={this.handleSubmit}>
           <div>
               <input
-              class="Input"
+                className="Input"
                 name="search"
                 type="text"
                 placeholder="What do you want?"
@@ -67,14 +67,14 @@ class App extends Component {
           </div>
           <div>
             <button
-              class="Button Button--default"
+              className="Button Button--default"
               type="submit"
               onClick={this.handleSubmit}>
               Search
             </button>
           </div>
         </form>
-        <div className="Grid Grid--withGutter Grid--fit">
+        <div>
           <a onClick={this.openModal}>
             <ImageList images={this.props.images} />
           </a>

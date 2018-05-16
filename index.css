@@ -24,7 +24,7 @@
   --base-link-color: #069;
   --base-link-color-hover: #069;
 
-  --Arrange-gutter-size: 20px;
+  --Arrange-gutter-size: 10px;
 
   --Button-border-width: 1px;
   --Button-border-color: currentcolor;
@@ -34,10 +34,52 @@
   --Button-disabled-opacity: 0.6;
 
   --Grid-font-size: 4rem;
-  --Grid-gutter-size: 20px;
+  --Grid-gutter-size: 10px;
 }
 
 html {
   font-size: calc(var(--base-font) * 2);
   color: var(--base-color);
+}
+
+
+.Grid-cell img {
+  display:block;
+  float:left;
+  position: relative;
+  max-width: 80%;
+  padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+  margin: 2.66%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.Input {
+  margin-left: 40%;
+  width: 400px;
+}
+
+.Button {
+  margin-left: 45%;
+  width: 200px;
+}
+
+.Modal-Backdrop {
+  position: 'fixed';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50
+}
+
+.Modal {
+  background-color: #fff;
+  border-radius: 5;
+  max-width: 500;
+  min-height: 300;
+  margin: 0 auto;
+  padding: 30;
 }
