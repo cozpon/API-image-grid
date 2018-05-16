@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors",
-    "build": "npm run setup && npm run preprocess",
+    "build": "npm run setup && npm run preprocess && webpack --config ./webpack.config.prod.js --progress --colors",
     "preprocess": "suitcss index.css build/build.css",
     "setup": "npm install && mkdir -p build"
   },

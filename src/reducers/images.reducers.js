@@ -6,7 +6,8 @@ const initialState = []; // initial state set as an array.
 // Instead of doing Object.assign({}, state, etc..).
 // I think it's a cleaner way of using a spread operator.
 
-// Using Switch/case
+// Using Switch/case for App expansion
+// more actions can be loaded in like Hide or something other than simply GET
 const imageList = (state = initialState, action) => {
   switch(action.type) {
     case LOAD_IMAGES:
