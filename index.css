@@ -1,30 +1,9 @@
-@import "suitcss-base";
-
-@import "suitcss-utils-align";
-@import "suitcss-utils-display";
 @import "suitcss-utils-layout";
-@import "suitcss-utils-link";
-@import "suitcss-utils-offset";
-@import "suitcss-utils-position";
 @import "suitcss-utils-size";
-
-@import "suitcss-components-arrange";
 @import "suitcss-components-button";
-@import "suitcss-components-flex-embed";
 @import "suitcss-components-grid";
 
-@custom-media --sm-viewport (min-width: 320px);
-@custom-media --md-viewport (min-width: 640px);
-@custom-media --lg-viewport (min-width: 960px);
-
 :root {
-  --base-color: inherit;
-  --base-font: 16px sans-serif;
-  --base-link-color: #069;
-  --base-link-color-hover: #069;
-
-  --Arrange-gutter-size: 10px;
-
   --Button-border-width: 1px;
   --Button-border-color: currentcolor;
   --Button-color: inherit;
@@ -36,26 +15,29 @@
   --Grid-gutter-size: 0px;
 }
 
-html {
+/*html {
   font-size: calc(var(--base-font) * 2);
   color: var(--base-color);
-}
+}*/
+
+@custom-media --sm-viewport (min-width:320px) and (max-width:640px);
+@custom-media --md-viewport (min-width:640px) and (max-width:960px);
+@custom-media --lg-viewport (min-width:960px);
 
 .Grid {
   padding: 50px;
 }
 
 .Grid-cell img:hover {
-  box-shadow: 10px 5px 5px red;
-  -moz-box-shadow: 10px 5px 5px red;
-  -webkit-box-shadow:  10px 5px 5px red;
+  opacity: 0.2;
+  cursor: pointer;
 }
 
 .Grid-cell img {
+  transition: opacity .1s ease-in-out;
   position: absolute;
   max-width: 100%;
   padding-top: 20px;
-
 }
 
 .Grid-cell {
@@ -67,7 +49,55 @@ html {
   max-width: 65%;
 }
 
+.Modal {
+  display: block;
+  max-width: 50%;
+  min-height: 20%;
+  margin: 0px auto;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Modal-Image {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.Modal-Backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 253, 255, 0.9);
+  padding: 25px;
+}
+
+/* Medium Viewport */
+
+@media screen and (min-width: 640px) and (max-width: 960px) {
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 65%;
+  }
+}
+
+/* Small Viewport */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 85%;
+  }
+}
+
 .Input {
+  font-size: 14px;
   display: block;
   margin: auto;
   font-family: 'Open Sans Condensed', arial, sans;
@@ -82,6 +112,22 @@ html {
   background: #EEF;
 }
 
+/* Medium Viewport */
+
+@media screen and (min-width: 640px) and (max-width: 960px) {
+  .Input {
+    width: 350px;
+    padding: 5px;
+  }
+}
+
+/* Small Viewport */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .Input {
+    width: 200px;
+  }
+}
 
 /* Search Button Styles */
 
@@ -122,7 +168,14 @@ html {
   box-shadow: inset 0 1px 2px rgba(0,0,0, 0.2);
 }
 
+
+
 .Close-Button {
-  font-size: 30px;
+  margin: auto;
+  display: block;
+  font-size: 35px;
   opacity: 0.5;
+  margin-top: 2%;
+  margin-left: 0%;
+  cursor: pointer;
 }

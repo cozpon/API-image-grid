@@ -3,7 +3,7 @@ import Image from'./image.components';
 
 const ImageList = ({ images }) => {
   return (
-    <div className="Grid" >
+    <div className="Grid v2-Grid--2col v3-Grid--3to2" >
       {
         images.map((image, index) => {
           let imageLink = image.media.m.replace('_m', '_c');
@@ -11,7 +11,7 @@ const ImageList = ({ images }) => {
           // simply replacing the _m with _c for larger image files
           return(
             <div className="u-size1of3" key={index}>
-              <div className="Grid-cell">
+              <div>
                 <Image
                   media={ imageLink }
                   title={ image.title }

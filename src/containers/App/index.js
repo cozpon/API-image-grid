@@ -83,8 +83,9 @@ class App extends Component {
           </a>
           <Modal
             show={this.state.isOpen}
-            onClose={this.closeModal}>
-            <img src={this.state.url} />
+            onClose={this.closeModal}
+            className="Modal-Backdrop" >
+            <img className="Modal-Image" src={this.state.url} />
           </Modal>
         </div>
      </div>
