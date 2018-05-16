@@ -1,0 +1,211 @@
+@import "suitcss-utils-layout";
+@import "suitcss-utils-size";
+@import "suitcss-components-button";
+@import "suitcss-components-grid";
+
+:root {
+  --Button-border-width: 1px;
+  --Button-border-color: currentcolor;
+  --Button-color: inherit;
+  --Button-font: inherit;
+  --Button-padding: 0.4em 0.75em;
+  --Button-disabled-opacity: 0.6;
+
+  --Grid-font-size: 4rem;
+  --Grid-gutter-size: 0px;
+}
+@custom-media --sm-viewport (min-width:320px) and (max-width:640px);
+@custom-media --md-viewport (min-width:640px) and (max-width:960px);
+@custom-media --lg-viewport (min-width:960px);
+
+
+
+/* Image Grid Display */
+
+.Grid {
+  padding: 50px;
+}
+
+.Grid-cell img:hover {
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.Grid-cell img {
+  transition: opacity .1s ease-in-out;
+  position: absolute;
+  max-width: 100%;
+  padding-top: 20px;
+}
+
+.Grid-cell {
+  display: block;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50%;
+  max-width: 65%;
+}
+
+/* Modal Image Display */
+
+.Modal {
+  display: block;
+  max-width: 30%;
+  min-height: 20%;
+  margin: 0px auto;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Modal-Image {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* Whiteout Background */
+
+.Modal-Backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 253, 255, 0.9);
+  padding: 25px;
+}
+
+/* Search Input */
+
+.Input {
+  font-size: 14px;
+  display: block;
+  margin: auto;
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 500px;
+  padding: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+  margin-top: 2%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background: #EEF;
+}
+
+
+/* Search Button Styles */
+
+.Button {
+  display: block;
+  position: inherit;
+  width: 220px;
+  margin: auto
+}
+
+.Button--large {
+  padding: 10px;
+  background: #EEF;
+  border-bottom: 2px solid #30C29E;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #555;
+  box-shadow: 1px 2px 5px 1.5px rgba(0, 0, 0, 0.22);
+}
+
+.Button--large:hover,
+.Button--large:focus,
+.Button--large:active,
+.Button--large.is-pressed {
+  color: #222;
+  border-color: #c6c6c6 #c6c6c6 #30C29E;
+}
+
+.Button--large:focus {
+  border-color: #c6c6c6;
+  outline: 0;
+}
+
+.Button--large:active,
+.Button--large.is-pressed {
+  background-color: #ccc;
+  box-shadow: inset 0 1px 2px rgba(0,0,0, 0.2);
+}
+
+/* Modal Close Button (X) */
+
+.Close-Button {
+  margin: auto;
+  display: block;
+  font-size: 35px;
+  opacity: 0.5;
+  margin-top: 2%;
+  margin-left: 0%;
+  cursor: pointer;
+}
+
+
+/* ///   Responsiveness  \\\ */
+
+
+/* Medium Viewport */
+
+@media screen and (min-width: 640px) and (max-width: 960px) {
+  .Grid {
+    padding: 25px;
+  }
+  .Grid-cell {
+    max-width: 70%;
+  }
+  .Grid-cell img {
+    padding-top: 20px;
+  }
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 65%;
+  }
+  .Input {
+    width: 350px;
+    padding: 5px;
+  }
+  .Button {
+    width: 200px;
+  }
+  .Button--large {
+    padding: 5px;
+  }
+}
+
+/* Small Viewport */
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .Grid {
+    padding: 0px;
+  }
+  .Grid-cell {
+    max-width: 80%;
+  }
+  .Grid-cell img {
+    padding-top: 12px;
+  }
+  .Modal-Image {
+    max-width: 100%;
+  }
+  .Modal {
+    max-width: 85%;
+  }
+  .Input {
+    width: 200px;
+    padding: 2px;
+  }
+  .Button {
+    width: 100px;
+  }
+  .Button--large {
+    padding: 3px;
+  }
+}

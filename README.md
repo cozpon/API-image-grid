@@ -6,9 +6,9 @@
 ### Clone to your local computer:
 in a terminal window run:
 ```
-git clone https://github.com/cozpon/Upthere
+git clone https://github.com/cozpon/Upthere_
 ```
-cd into Upthere directory and run
+cd into Upthere_ directory and run
 ```
 npm install
 ```
@@ -28,3 +28,5 @@ http://localhost:8080/
 ## Built with:
 - Node.js
 - React.js
+- Webpack
+- SUITcss

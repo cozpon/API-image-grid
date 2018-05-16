@@ -24,7 +24,6 @@ class App extends Component {
     let tags = {
       search : this.state.search
     };
-
     this.props.loadImages(tags);
   }
 
@@ -37,7 +36,7 @@ class App extends Component {
 
   openModal (evt) {
     let url = evt.target.src;
-    if(url){
+    if(url){ // clicking the actual image opens the Modal, and not just Div padding
       this.setState({
         isOpen: true,
         url: url
@@ -54,33 +53,39 @@ class App extends Component {
 
   render() {
     return (
-      <div id="main">
+      <div>
         <form onSubmit={this.handleSubmit}>
-          <div id="search">
-              <input
-                name="search"
-                type="text"
-                placeholder="What do you want?"
-                defaultValue={this.state.search}
-                onChange={this.handleSearchInput}/>
+          <div>
+            <input
+              className="Input"
+              name="search"
+              type="text"
+              placeholder="What do you want?"
+              defaultValue={this.state.search}
+              onChange={this.handleSearchInput}
+            />
           </div>
-          <div id="submit_button">
+          <div>
             <button
-              className="search-btn"
+              className="Button Button--large"
               type="submit"
               onClick={this.handleSubmit}>
               Search
             </button>
           </div>
         </form>
-        <div className="images">
+        <div>
           <a onClick={this.openModal}>
             <ImageList images={this.props.images} />
           </a>
           <Modal
             show={this.state.isOpen}
-            onClose={this.closeModal}>
-            <img src={this.state.url} />
+            onClose={this.closeModal}
+            className="Modal-Backdrop" >
+              <img
+                className="Modal-Image"
+                src={this.state.url}
+              />
           </Modal>
         </div>
      </div>
@@ -88,11 +93,9 @@ class App extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
-  console.log(state, "STATE")
   return {
-    images : state.imageList, // makes it this.props.images
+    images : state.imageList
   }
 }
 
@@ -103,7 +106,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
 
 export default connect(
   mapStateToProps,

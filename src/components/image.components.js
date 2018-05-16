@@ -1,12 +1,9 @@
 import React from 'react';
-
+// "Dumb" component to display image
 const Image = ({ media, title }) => {
   return (
-    <div>
-        <img
-          src={ media }
-          alt={ title }
-        />
+    <div className="Grid-cell">
+      <img src={ media } alt={ title }/>
     </div>
   )
 }

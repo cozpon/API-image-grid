@@ -8,8 +8,7 @@ import {
 } from 'react-router-dom';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
-import './index.css';
-
+import '../index.css';
 
 import App from './containers/App';
 
@@ -23,7 +22,7 @@ const store = createStore(
   applyMiddleware(thunk)
 );
 
-
+// Using React-Router-Dom for app expansion, to allow routing between (future) containers
 ReactDOM.render(
   <Provider store={store}>
     <Router>
@@ -36,7 +35,3 @@ document.getElementById('root')
 );
 
 registerServiceWorker();
-
-if (module.hot) {
-  module.hot.accept();
-}

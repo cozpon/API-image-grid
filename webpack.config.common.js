@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const postcssLoader = require('./postcss.loader');
+
 module.exports = {
   entry: {
     app: './src/index.js',
   },
-plugins: [
+  plugins: [
     new CleanWebpackPlugin(['app']),
     new HtmlWebpackPlugin({
       title: 'Minimum-Viable',
@@ -13,7 +15,7 @@ plugins: [
       template: './public/index.html',
     }),
   ],
-module: {
+  module: {
     rules: [
       {
         test: /\.jsx?$/,
@@ -45,7 +47,8 @@ module: {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
+          'css-loader?importLoaders=1',
+          postcssLoader,
         ],
       },
     ],
