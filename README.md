@@ -6,17 +6,24 @@
 ### Clone to your local computer:
 in a terminal window run:
 ```
-git clone https://github.com/cozpon/Upthere
+
+git clone https://github.com/cozpon/Upthere_
 ```
-cd into Upthere directory and run
+cd into Upthere_ directory and run:
+
 ```
 npm install
 ```
-to install node_modules
+to install the node_modules
 
-Then run
+
+Then run:
 ```
 npm start
+```
+Open your browser and go to:
+```
+http://localhost:8080/
 ```
 
 ### Enjoy!
@@ -25,3 +32,8 @@ npm start
 ## Built with:
 - Node.js
 - React.js
+- Webpack
+- SUITcss
+
+
+
