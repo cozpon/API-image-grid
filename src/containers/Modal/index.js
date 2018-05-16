@@ -28,13 +28,19 @@ class Modal extends Component {
     };
 
     return (
-      <div className="Backdrop" style={ backdropStyle }>
-        <div className="Modal"
+      <div
+        className="Backdrop"
+        style={ backdropStyle }>
+
+        <div
+          className="Modal"
           style={ modalStyle }>
+
           {this.props.children}
-          <div className="footer">
+
+          <div className="Close-Button">
             <button onClick={this.props.onClose}>
-              Close
+              X
             </button>
           </div>
         </div>
