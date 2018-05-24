@@ -25,6 +25,10 @@ Open your browser and go to:
 ```
 http://localhost:8080/
 ```
+Unfortunately The Flickr API doesn't support CORS.
+A work-around is to enable CORS using this Google Chrome add-on:
+https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+
 
 ### Enjoy!
 
