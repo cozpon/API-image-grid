@@ -1,4 +1,4 @@
-# Upthere Code Challenge
+# Flickr API Grab
 - Built to use Flickr's public, search API to create a responsive image gallery.
 
 ## Getting Started:
