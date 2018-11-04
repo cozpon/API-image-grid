@@ -8,7 +8,7 @@ in a terminal window run:
 ```
 git clone https://github.com/cozpon/API-image-grid
 ```
-cd into Upthere_ directory and run:
+cd into the directory and run:
 
 ```
 npm install
